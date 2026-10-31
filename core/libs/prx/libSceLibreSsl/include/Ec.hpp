@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdint>
 #include <memory>
 #include "mbedtls/ecp.h"
 
@@ -21,4 +22,5 @@ struct EcGroup {
 
 struct EcKey {
     std::unique_ptr<EcGroup> group;
+    std::int32_t references = 1;
 };
